@@ -4,7 +4,6 @@ import logging
 import os
 import pickle
 import ssl
-import sys
 import time
 from collections import deque
 from typing import BinaryIO, Callable, Deque, Dict, List, Optional, Union, cast
