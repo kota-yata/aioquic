@@ -4,6 +4,7 @@ import logging
 import os
 import pickle
 import ssl
+import sys
 import time
 from collections import deque
 from typing import BinaryIO, Callable, Deque, Dict, List, Optional, Union, cast
@@ -538,6 +539,12 @@ if __name__ == "__main__":
     parser.add_argument(
         "--zero-rtt", action="store_true", help="try to send requests using 0-RTT"
     )
+    parser.add_argument(
+        "--dtn",
+        type=bool,
+        default=False,
+        help="enable DTN mode",
+    )
 
     args = parser.parse_args()
 
@@ -584,6 +591,10 @@ if __name__ == "__main__":
                 configuration.session_ticket = pickle.load(fp)
         except FileNotFoundError:
             pass
+
+    if args.dtn:
+        configuration.idle_timeout = 1000000
+        configuration.initial_rtt = 1000000
 
     # load SSL certificate and key
     if args.certificate is not None:
