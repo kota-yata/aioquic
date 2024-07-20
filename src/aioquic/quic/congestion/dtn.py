@@ -2,7 +2,6 @@ from typing import Iterable
 
 from ..packet_builder import QuicSentPacket
 from .base import (
-    K_MINIMUM_WINDOW,
     QuicCongestionControl,
     QuicRttMonitor,
     register_congestion_control,
