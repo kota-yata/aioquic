@@ -561,7 +561,9 @@ if __name__ == "__main__":
         alpn_protocols=H0_ALPN if args.legacy_http else H3_ALPN,
         congestion_control_algorithm=args.congestion_control_algorithm,
         max_datagram_size=args.max_datagram_size,
+        server_name=urlparse(args.url[0]).hostname,
     )
+    configuration.verify_mode = False
     if args.ca_certs:
         configuration.load_verify_locations(args.ca_certs)
     if args.cipher_suites:
