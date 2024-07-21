@@ -596,7 +596,7 @@ if __name__ == "__main__":
     if args.dtn:
         configuration.idle_timeout = 1000000
         configuration.initial_rtt = 1000000
-        configuration.congestion_control_algorithm = 'dtn'
+        configuration.congestion_control_algorithm = "dtn"
 
     # load SSL certificate and key
     if args.certificate is not None:

@@ -2,6 +2,7 @@ import logging
 import math
 from typing import Any, Callable, Dict, Iterable, List, Optional
 
+from .congestion import cubic, dtn, reno  # noqa
 from .congestion.base import K_GRANULARITY, create_congestion_control
 from .logger import QuicLoggerTrace
 from .packet_builder import QuicDeliveryState, QuicSentPacket
