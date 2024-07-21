@@ -491,6 +491,11 @@ if __name__ == "__main__":
         action="store_true",
         help="start with QUIC v1 and try to negotiate QUIC v2",
     )
+    parser.add_argument(
+        "--dtn",
+        action="store_true",
+        help="enable DTN mode",
+    )
 
     parser.add_argument(
         "--output-dir",
@@ -537,12 +542,6 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         "--zero-rtt", action="store_true", help="try to send requests using 0-RTT"
-    )
-    parser.add_argument(
-        "--dtn",
-        type=bool,
-        default=False,
-        help="enable DTN mode",
     )
 
     args = parser.parse_args()
